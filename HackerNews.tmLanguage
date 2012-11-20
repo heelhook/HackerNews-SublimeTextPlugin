@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-        <key>fileTypes</key>
-        <array>
-            <string>hackernews</string>
-        </array>
+<dict>
+    <key>fileTypes</key>
+    <array>
+        <string>hackernews</string>
+    </array>
+    
+    <key>name</key>
+    <string>Hacker News</string>
+    
+    <key>patterns</key>
+    <array>
+
+        <dict>
+            <key>match</key>
+            <string>^\s*(\w+.+:\s*$\n?)</string>
+            <key>name</key>
+            <string>header.hackerNews</string>
+        </dict>
         
-        <!-- <key>keyEquivalent</key>
-        <string>^~T</string> -->
+        <dict>
+            <key>match</key>
+            <string>\((\d*)\) </string>
+            <key>name</key>
+            <string>hackernews.upvotes</string>
+        </dict>
         
-        <key>name</key>
-        <string>Hacker News</string>
-        
-        <key>patterns</key>
-        <array>
-            <dict>
-                <key>match</key>
-                <string>^\s*(\w+.+:\s*$\n?)</string>
-                <key>name</key>
-                <string>keyword.control.header.todo</string>
-            </dict>
-        </array>
-    </dict>
+    </array>
+    <key>scopeName</key>
+    <string>text.todo</string>
+</dict>
 </plist>
