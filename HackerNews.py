@@ -21,10 +21,38 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
         hn = HackerNews()
         stories = hn.get_stories()
         
-        # Build stories text:
-        text = u'HACKER NEWS:\n\n'
+        # Get spacing for upvotes:
+        largest = 0
         for story in stories['items']:
-            text += "(%d)  %s  - %s\n\n" % (story['points'], story['title'], story['postedBy'])
+            if story['points'] > largest:
+                largest = story['points']
+        
+        # Build stories text:
+        text = u' Hacker News:'
+        for story in stories['items']:
+            line = ""
+            
+            # Add upvotes:
+            line += "(%d)" % story['points']
+            
+            # Add spacing:
+            line += " " * int((len(str(largest)) + 1) - len(str(story['points'])))
+            
+            # Figure out indentation for next line:
+            line_indent = len(line)
+            
+            # Add in headline:
+            line += "%s" % (story['title'])
+            
+            # Comments:
+            comments = "discuss"
+            
+            # Add details in below:
+            line += "\n" + (" " * line_indent)
+            line += "Uploaded by: %s  |  %s" % (story['postedBy'], comments)
+            
+            # Add to page:
+            text += "\n\n" + line
         
         # Insert text:
         view.insert(edit, 0, text)
