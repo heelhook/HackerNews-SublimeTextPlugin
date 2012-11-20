@@ -3,16 +3,10 @@
 
 import sublime
 import sublime_plugin
+import os.path
+import json
+from hn import HackerNews
 
-class HackerNews (object):
-    
-    def get_stories (self):
-        return [
-            (u'Hello World', 156, 'dotty'),
-            (u'Hello World', 156, 'dotty'),
-            (u'Hello World', 156, 'dotty'),
-            (u'Hello World', 156, 'dotty'),
-        ]
 
 class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
     def run(self):
@@ -28,8 +22,9 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
         
         # Build stories text:
         text = u'HACKER NEWS:\n\n'
-        for story in stories:
-            text += "(%d)  %s  - %s\n\n" % (story[1], story[0], story[2])
+        for story in stories['items']:
+            print story
+            text += "(%d)  %s  - %s\n\n" % (story['points'], story['title'], story['postedBy'])
         
         # Insert text:
         view.insert(edit, 0, text)
