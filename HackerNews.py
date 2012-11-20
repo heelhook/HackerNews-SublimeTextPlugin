@@ -12,6 +12,7 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
     def run(self):
         # Open tab:
         view = self.window.new_file()
+        view.set_syntax_file('Packages/HackerNews/HackerNews.tmLanguage')
         
         # Get edit object:
         edit = view.begin_edit()
@@ -23,7 +24,6 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
         # Build stories text:
         text = u'HACKER NEWS:\n\n'
         for story in stories['items']:
-            print story
             text += "(%d)  %s  - %s\n\n" % (story['points'], story['title'], story['postedBy'])
         
         # Insert text:
