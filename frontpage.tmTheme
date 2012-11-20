@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>Notebook</string>
+    
+    <key>settings</key>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>header.hackerNews</string>
+            <key>scope</key>
+            <string>header.hackerNews</string>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>#ff6600</string>
+                <key>foreground</key>
+                <string>#ffffff</string>
+                <key>fontStyle</key>
+                <string>bold</string>
+                <key>fontSize</key>
+                <string>25.0</string>
+            </dict>
+        </dict>
+        
+        <dict>
+            <key>name</key>
+            <string>hackernews.upvotes</string>
+            <key>scope</key>
+            <string>hackernews.upvotes</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#ccc</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>
