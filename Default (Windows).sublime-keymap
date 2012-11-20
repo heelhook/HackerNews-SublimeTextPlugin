@@ -1,0 +1,3 @@
+[
+    { "keys": ["ctrl+k"], "command": "open_hacker_news"}
+]
