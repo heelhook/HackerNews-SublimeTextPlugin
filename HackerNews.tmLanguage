@@ -27,6 +27,13 @@
             <string>hackernews.upvotes</string>
         </dict>
         
+        <dict>
+            <key>match</key>
+            <string>([ ]{3,10})Uploaded by: ([^ ]*)  \|  ([^\n]*)\n</string>
+            <key>name</key>
+            <string>hackernews.info</string>
+        </dict>
+        
     </array>
     <key>scopeName</key>
     <string>text.todo</string>

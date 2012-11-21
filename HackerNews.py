@@ -30,6 +30,8 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
         # Build stories text:
         text = u' Hacker News:'
         for story in stories['items']:
+            print story
+            
             line = ""
             
             # Add upvotes:
@@ -45,7 +47,12 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
             line += "%s" % (story['title'])
             
             # Comments:
-            comments = "discuss"
+            if story['commentCount'] == 0:
+                comments = "discuss"
+            elif story['commentCount'] == 1:
+                comments = "%d comment" % (story['commentCount'])
+            else:
+                comments = "%d comments" % (story['commentCount'])
             
             # Add details in below:
             line += "\n" + (" " * line_indent)

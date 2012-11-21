@@ -36,6 +36,18 @@
                 <string>#ccc</string>
             </dict>
         </dict>
+        
+        <dict>
+            <key>name</key>
+            <string>hackernews.info</string>
+            <key>scope</key>
+            <string>hackernews.info</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#aaa</string>
+            </dict>
+        </dict>
     </array>
 </dict>
 </plist>
