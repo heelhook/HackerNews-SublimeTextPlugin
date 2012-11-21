@@ -30,8 +30,6 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
         # Build stories text:
         text = u' Hacker News:'
         for story in stories['items']:
-            print story
-            
             line = ""
             
             # Add upvotes:
@@ -66,3 +64,5 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
         
         # End edit:
         view.end_edit(edit)
+        view.set_scratch(True)
+        view.set_name('Hacker News')
