@@ -1,6 +1,9 @@
 ## Hacker News Plugin for Sublime Text 2
 
-Still in development. Works but currently can't open links. Won't be long until that's working.
+Browser Hacker News from inside your text editor and shoot dead any remaining
+scrap of productivity.
+
+Will be submitting to Package Control soon.
 
 ![Screenshot](http://i.imgur.com/AGDFg.png)
 
