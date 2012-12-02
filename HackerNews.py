@@ -125,6 +125,12 @@ class MouseEventProcessor(MouseEventListener):
             
             try:
                 url = URL_CACHE[title]
+                
+                # Check whether it's an external or HN link:
+                foo = "/comments/"
+                if url[:len(foo)] == foo:
+                    url = "http://news.ycombinator.com/item?id=" + url.replace(foo, '')
+                
                 webbrowser.open(url)
             except:
                 print "HackerNews: couldn't figure out URL"
