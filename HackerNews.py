@@ -84,7 +84,10 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
             line_indent = len(line)
             
             # Add URL to cache:
-            URL_CACHE[story['title']] = story['url']
+            URL_CACHE[story['title']] = [
+                story['url'],
+                story['id'],
+            ]
             
             # Add in headline:
             line += "%s" % (story['title'])
@@ -105,7 +108,7 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
             text += "\n\n" + line
         
         # Insert text:
-        view.insert(edit, 0, text)
+        view.insert(edit, 0, text + "\n")
         
         # End edit:
         view.end_edit(edit)
@@ -124,7 +127,7 @@ class MouseEventProcessor(MouseEventListener):
             title = re.sub('^\(([\d]*)\)([ ]{1,10})', '', line)
             
             try:
-                url = URL_CACHE[title]
+                url = URL_CACHE[title][0]
                 
                 # Check whether it's an external or HN link:
                 foo = "/comments/"
@@ -134,3 +137,16 @@ class MouseEventProcessor(MouseEventListener):
                 webbrowser.open(url)
             except:
                 print "HackerNews: couldn't figure out URL"
+        elif re.match('^([ ]{1,10})Uploaded by:', line):
+            word = view.substr(view.word(point)).strip()
+            
+            if word in ['', ':', '|']:
+                return
+            elif line.find(word + '  |') > 0:
+                webbrowser.open('http://news.ycombinator.com/user?id=' + word)
+            elif word[0:7] == 'comment' or word.isdigit() or word == 'discuss':
+                # Find line above:
+                line_above = view.substr(view.line(region.a - 1))
+                comments_title = re.sub('^\(([\d]*)\)([ ]{1,10})', u'', line_above)
+                story_id = URL_CACHE[comments_title][1]
+                webbrowser.open('http://news.ycombinator.com/item?id=' + str(story_id))
