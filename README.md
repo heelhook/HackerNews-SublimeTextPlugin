@@ -1,6 +1,6 @@
 ## Hacker News Plugin for Sublime Text 2
 
-Browser Hacker News from inside your text editor and shoot dead any remaining
+Browse Hacker News from inside your text editor and shoot dead any remaining
 scrap of productivity.
 
 Will be submitting to Package Control soon.
