@@ -1,0 +1,18 @@
+================================================================================
+== Hacker News Plugin for Sublime Text 2 ==
+
+Thanks for installing!
+
+To load the front-page of Hacker News in Sublime Text, the default key
+combination is Ctrl + K (or, if you're on OS X, Cmd + K).
+
+To view an article in your browser, simply click the title. You can also click
+on the comments link to load the comments, or the submitter's username to
+load their profile.
+
+If you find a bug, please open an issue here:
+https://github.com/dotty/HackerNews-SublimeTextPlugin/issues
+
+Or alternatively email me with the issue:  mail@timdavi.es
+
+================================================================================
