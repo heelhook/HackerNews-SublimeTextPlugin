@@ -11,7 +11,7 @@ import urllib2
 from MouseEvents import DragSelectCallbackCommand, MouseEventListener
 
 
-HN_TMLANGUAGE_PATH = 'Packages/HackerNews/HackerNews.tmLanguage'
+HN_TMLANGUAGE_PATH = 'Packages/Hacker News/HackerNews.tmLanguage'
 URL_CACHE = {}
 
 
@@ -26,7 +26,7 @@ class OpenHackerNewsCommand(sublime_plugin.WindowCommand):
     def run(self):
         # Open tab and set syntax highlighting:
         view = self.window.new_file()
-        view.set_syntax_file('Packages/HackerNews/HackerNews.tmLanguage')
+        view.set_syntax_file('Packages/Hacker News/HackerNews.tmLanguage')
         
         # Get edit object:
         edit = view.begin_edit()
