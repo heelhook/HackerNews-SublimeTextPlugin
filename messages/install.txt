@@ -1,7 +1,7 @@
 Thanks for installing!
 
 To load the front-page of Hacker News in Sublime Text, the default key
-combination is Ctrl + K (or, if you're on OS X, Cmd + K).
+combination is Ctrl + K (or, if you're on OS X, Cmd+Shift+H, Cmd+Shift+N).
 
 To view an article in your browser, simply click the title. You can also click
 on the comments link to load the comments, or the submitter's username to
